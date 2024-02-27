@@ -43,6 +43,7 @@ const SocketProvider = ({ children, url }: SocketProviderProps) => {
   }, [url, setSocket]);
 
   const handleChangeSocket = (socket: Socket) => {
+    sockets[url].socket = socket;
     sockets[url].observers.forEach((fn) => fn(socket));
   };
 
